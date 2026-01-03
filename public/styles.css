@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+      --bg-darkmode:#000;
+      --bg-lightmode:#fff;
+}
+body {
+     display: flex;
+     justify-content: space-around;
+     background-image: url(../public/images/header.png);
+     background-position: top;
+     background-repeat:no-repeat;
+     background-color:var(--bg-lightmode);
+     color: #fff;
+     font-family: 'Ubuntu', sans-serif;
+}
+
+.continer {
+        margin-top: 200px;
+}
+.header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+h1 {
+    flex-grow: 0;
+}
+
+.darkmode-toggle {
+    width: 30px;
+    height: 30px;
+    background-image: url(images/moon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+}
