@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 :root {
-      --bg-darkmode:#000;
-      --bg-lightmode:#fff;
+      --bg-darkmode:#141F2F;;
+      --bg-lightmode:#E3E7EE;
+
+      --item-darkmode:#25273C;;
+      --item-lightmode:#F7F5F5;;
+
+      --font-darkmode: #B7B7B7;
+    --font-lightmode: #263956;
+      
+      --check-lightmode: #D1D5DB;
+    --check-darkmode: #182233;
+
 }
+
 body {
      display: flex;
      justify-content: space-around;
@@ -11,12 +22,14 @@ body {
      background-position: top;
      background-repeat:no-repeat;
      background-color:var(--bg-lightmode);
-     color: #fff;
+     color:white;
      font-family: 'Ubuntu', sans-serif;
+     margin: 0;
 }
 
 .continer {
-        margin-top: 200px;
+        margin-top: 230px;
+        width: 475px;
 }
 .header {
      display: flex;
@@ -35,4 +48,140 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     flex-grow: 0;
+}
+
+.input {
+     padding:20px 10px;
+    width: calc(100% - 20px);
+    font-size: 22px;
+    border: none;
+    margin-bottom: 40px;
+    background-color: var(--item-lightmode);
+}
+
+.item {
+    display: flex;
+    align-items:center ;
+    background-color: var(--item-lightmode);
+    color:var(--font-lightmode);
+    padding: 10px;
+    height:45px ;
+    font-size: 22px; 
+    border-bottom: 1px solid #d1d5db;
+}
+
+.item-checked {
+       text-decoration: line-through;
+}
+
+
+.checkbox {
+          width:30px ;
+          height: 30px;
+          position:relative;
+          cursor: pointer;
+          margin: 10px;
+          border-bottom: 1px solid #5e5d5d;
+}
+
+.checkbox::before {
+       content: '';
+       display:block ;
+       position: absolute;
+       width: 30px;
+       height: 30px;
+       top: 0;
+       left: 0;
+       background-color: var(--check-lightmode);
+}
+
+.checkbox:checked::before {
+            background-color: #1e80ef;
+}
+
+.checkbox:checked::after {
+    content: '';
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            -webkit-transform:rotate(45deg);
+            -ms-transform: rotate(45deg);
+            display: block;
+            width: 10px;
+            height: 15px;
+            position: absolute;
+            top: 3px;
+            left: 9px;
+
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--item-lightmode);
+    color:var(--font-lightmode);
+    padding: 20px 10px;
+    font-size: 14px; 
+}
+
+.footer div {
+
+        margin: 0 5px;
+}
+
+.footer a {
+
+        margin: 0 5px;
+        text-decoration: none;
+        color: var(--font-lightmode);
+        
+}
+
+.footer a:hover{
+          
+        color: #8ac2fe;
+
+}
+
+.footer a.active {
+        color: #116acc;
+
+}
+
+body.darkmode {
+         background-color:var(--bg-darkmode);  
+}
+
+.darkmode .darkmode-toggle {
+    background-image: url(images/sun.svg); 
+}
+
+.darkmode .input ,.darkmode .item , .darkmode .footer{
+    background-color: var(--item-darkmode);
+    color: var(--font-darkmode);
+}
+
+.darkmode .checkbox:before {
+     background-color: var(--check-darkmode);
+}
+
+.darkmode .checkbox:checked:before {
+         background-color: #1e80ef;
+}
+
+.darkmode a {
+        color: var(--font-darkmode);
+}
+
+@media (max-width: 600px) {
+        div.continer {
+                 margin-top: 150px;
+                 width: 90%;
+        }
+        .footer {
+            padding: 10px;
+            font-size: 10px;
+            gap: 6px;
+        }
+        
 }
